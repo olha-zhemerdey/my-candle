@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candle Soul</title>
+    <link rel="stylesheet" href="/src/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- SVG Icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="icon-instagram" viewBox="0 0 24 24">
+        <path
+          d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zM17.2 6.8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+        />
+      </symbol>
+      <symbol id="icon-facebook" viewBox="0 0 24 24">
+        <path
+          d="M14 8h3V5h-3c-2.2 0-4 1.8-4 4v3H7v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"
+        />
+      </symbol>
+      <symbol id="icon-telegram" viewBox="0 0 24 24">
+        <path
+          d="M21.8 2.2L2.6 10.4c-1.2.5-1.2 1.6-.2 1.9l4.7 1.5 1.8 5.5c.3.8.5.8 1 .3l2.7-2.6 5.5 4c1 .5 1.7.2 2-.9L23 3.6c.4-1.4-.5-2-1.2-1.4z"
+        />
+      </symbol>
+    </svg>
+
+    <header class="top-header">
+      <div class="top-header-content">
+        <!-- Logo зліва -->
+        <a
+          href="/"
+          class="logo"
+          data-en="Wax & Whisper"
+          data-ua="Wax & Whisper"
+        >
+          Wax & Whisper
+        </a>
+
+        <!-- Language Switcher посередині -->
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="ua">UA</button>
+          <button class="lang-btn active" data-lang="en">EN</button>
+        </div>
+
+        <!-- Socials справа -->
+        <div class="socials">
+          <a
+            href="https://www.instagram.com/wax_a_n_d_whisper?igsh=MThqYXh2Y2tka2lmeA%3D%3D&utm_source=qr"
+            target="_blank"
+            class="social-link"
+          >
+            <svg class="icon"><use href="#icon-instagram"></use></svg>
+          </a>
+          <a
+            href="https://www.facebook.com/share/1AcKUUuedr/?mibextid=wwXIfr"
+            class="social-link"
+          >
+            <svg class="icon"><use href="#icon-facebook"></use></svg>
+          </a>
+          <a href="http://t.me/OlhaZhemerdei" class="social-link">
+            <svg class="icon"><use href="#icon-telegram"></use></svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section (без змін) -->
+    <section class="section-one">
+      <div class="section-content">
+        <h1 class="top-logo">Wax & Whisper</h1>
+        <p class="subtitle">Handmade candles for warm moments</p>
+
+        <div class="hero-buttons">
+          <button
+            class="button scroll-btn"
+            data-target="#about"
+            data-en="Learn More"
+            data-ua="Детальніше"
+          >
+            Learn More
+          </button>
+
+          <button
+            class="button scroll-btn"
+            data-target="#contact"
+            data-en="Contact Us"
+            data-ua="Зв'язатись"
+          >
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <h2 data-en="About" data-ua="Про нас">About</h2>
+      <p
+        data-en="Wax & Whisper was born from a love for quiet evenings, soft light, and handmade rituals.
+Each candle is poured slowly, with attention to detail, scent, and mood — to bring warmth, calm, and a gentle pause into everyday life."
+        data-ua="Wax & Whisper народився з любові до тихих вечорів, м’якого світла та ручних ритуалів.
+Кожна свічка створюється повільно — з увагою до деталей, аромату й настрою, щоб дарувати тепло, спокій і момент паузи в повсякденності."
+      >
+        Wax & Whisper was born from a love for quiet evenings, soft light, and
+        handmade rituals. Each candle is poured slowly, with attention to
+        detail, scent, and mood — to bring warmth, calm, and a gentle pause into
+        everyday life.
+      </p>
+    </section>
+
+    <!-- WHY US -->
+    <section class="products">
+      <h2 data-en="Why Wax & Whisper" data-ua="Чому Wax & Whisper">
+        Why Wax & Whisper
+      </h2>
+
+      <div class="cards">
+        <!-- Card 1 -->
+        <article class="card card-hover">
+          <img
+            src="./image/Generated Image January 26, 2026 - 11_00PM-2.jpg"
+            alt="Handmade candles"
+          />
+          <div class="card-overlay">
+            <h3 data-en="Handmade" data-ua="Ручна робота">Handmade</h3>
+            <p
+              data-en="Each candle is crafted by hand in small batches."
+              data-ua="Кожна свічка виготовляється вручну невеликими партіями."
+            >
+              Each candle is crafted by hand in small batches.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card card-hover">
+          <img
+            src="./image/Generated Image January 26, 2026 - 11_09PM.jpg"
+            alt="Natural wax"
+          />
+          <div class="card-overlay">
+            <h3 data-en="Natural Wax" data-ua="Натуральний віск">
+              Natural Wax
+            </h3>
+            <p
+              data-en="We use high-quality wax for a clean and safe burn."
+              data-ua="Ми використовуємо якісний віск для чистого та безпечного горіння."
+            >
+              We use high-quality wax for a clean and safe burn.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card card-hover">
+          <img
+            src="./image/Generated Image January 26, 2026 - 11_36PM.jpg"
+            alt="Slow living"
+          />
+          <div class="card-overlay">
+            <h3 data-en="Slow Living" data-ua="Філософія slow living">
+              Slow Living
+            </h3>
+            <p
+              data-en="Our candles are created for calm evenings and mindful moments."
+              data-ua="Наші свічки створені для спокійних вечорів та усвідомлених моментів."
+            >
+              Our candles are created for calm evenings and mindful moments.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- SCENTS -->
+    <section class="products">
+      <h2 data-en="Our Scents" data-ua="Наші аромати">Our Scents</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Lavender & Vanilla</h3>
+          <p
+            data-en="Soft, calming aroma for relaxation and balance."
+            data-ua="Ніжний заспокійливий аромат для відпочинку та гармонії."
+          >
+            Soft, calming aroma for relaxation and balance.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Amber & Wood</h3>
+          <p
+            data-en="Deep, warm scent for cozy evenings."
+            data-ua="Глибокий теплий аромат для затишних вечорів."
+          >
+            Deep, warm scent for cozy evenings.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Rose & Musk</h3>
+          <p
+            data-en="Romantic and elegant fragrance for special moments."
+            data-ua="Романтичний та елегантний аромат для особливих моментів."
+          >
+            Romantic and elegant fragrance for special moments.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- OUR CANDLES -->
+    <section class="products" id="candles">
+      <h2 data-en="Our Candles" data-ua="Наші свічки">Наші свічки</h2>
+
+      <div class="carousel">
+        <button class="carousel-btn prev" aria-label="Previous">‹</button>
+
+        <div class="carousel-track">
+          <!-- Card 1 -->
+          <article class="card candle-card">
+            <img
+              src="./image/dresses.png"
+              alt="Molded candles"
+              class="candle-img"
+            />
+            <h3 data-en="Molded candles" data-ua="Формові свічки">
+              Формові свічки
+            </h3>
+            <p
+              class="candle-desc"
+              data-en="Sculptural candles that become aesthetic accents."
+              data-ua="Скульптурні свічки, які стають стильними акцентами."
+            >
+              Скульптурні свічки, які стають стильними акцентами.
+            </p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card candle-card">
+            <img
+              src="./image/container candle.png"
+              alt="Container candles"
+              class="candle-img"
+            />
+            <h3 data-en="Container Candles" data-ua="Контейнерні свічки">
+              Контейнерні свічки
+            </h3>
+            <p
+              class="candle-desc"
+              data-en="Minimalist design with a cozy glow."
+              data-ua="Мінімалістичний дизайн із затишним світлом."
+            >
+              Мінімалістичний дизайн із затишним світлом.
+            </p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card candle-card">
+            <img
+              src="./image/wooden-candle.png"
+              alt="Wood candles"
+              class="candle-img"
+            />
+            <h3 data-en="Wooden Candles" data-ua="Свічки у дереві">
+              Свічки у дереві
+            </h3>
+            <p
+              class="candle-desc"
+              data-en="A blend of fire, wood, and craftsmanship."
+              data-ua="Поєднання вогню, дерева та ремісничого мистецтва."
+            >
+              Поєднання вогню, дерева та ремісничого мистецтва.
+            </p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card candle-card">
+            <img
+              src="./image/Generated Image January 27, 2026 - 12_00AM.png"
+              alt="Massage candles"
+              class="candle-img"
+            />
+            <h3 data-en="Massage Candles" data-ua="Масажні свічки">
+              Масажні свічки
+            </h3>
+            <p
+              class="candle-desc"
+              data-en="A spa-like massage candle for deep comfort and care."
+              data-ua="Теплі олійні свічки, що тануть у ніжний масаж."
+            >
+              Масажна свічка для ніжного догляду та релаксу.
+            </p>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="card candle-card">
+            <img
+              src="./image/Generated Image January 26, 2026 - 11_57PM.png"
+              alt="Gift sets"
+              class="candle-img"
+            />
+            <h3 data-en="Gift Sets" data-ua="Подарункові набори">
+              Подарункові набори
+            </h3>
+            <p
+              class="candle-desc"
+              data-en="Beautifully packed candles for special moments."
+              data-ua="Красиво запаковані свічки для особливих моментів."
+            >
+              Красиво запаковані свічки для особливих моментів.
+            </p>
+          </article>
+        </div>
+
+        <button class="carousel-btn next" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <!-- GIFT SECTION -->
+    <section class="about">
+      <h2 data-en="Perfect as a Gift" data-ua="Ідеально для подарунку">
+        Perfect as a Gift
+      </h2>
+      <p
+        data-en="Our candles are beautifully packed and ready to become a meaningful gift for birthdays, housewarmings, or romantic moments."
+        data-ua="Наші свічки красиво запаковані та готові стати особливим подарунком на день народження, новосілля або романтичний момент."
+      >
+        Our candles are beautifully packed and ready to become a meaningful gift
+        for birthdays, housewarmings, or romantic moments.
+      </p>
+    </section>
+
+    <!-- WORKSHOPS -->
+    <section class="products">
+      <h2
+        data-en="Candle Making Workshops"
+        data-ua="Майстер-класи зі створення свічок"
+      >
+        Candle Making Workshops
+      </h2>
+
+      <div class="cards">
+        <!-- Romantic Workshop -->
+        <article class="card">
+          <h3
+            data-en="Romantic Candle Evening"
+            data-ua="Романтичний свічковий вечір"
+          >
+            Romantic Candle Evening
+          </h3>
+          <p
+            data-en="A cozy candle-making experience for couples or close friends. Soft light, warm scents, and a slow creative ritual to share together."
+            data-ua="Затишний майстер-клас для пар або близьких друзів. М’яке світло, теплі аромати та повільний творчий ритуал для спільного часу."
+          >
+            A cozy candle-making experience for couples or close friends. Soft
+            light, warm scents, and a slow creative ritual to share together.
+          </p>
+        </article>
+
+        <!-- Kids Workshop -->
+        <article class="card">
+          <h3
+            data-en="Candle Workshop for Kids"
+            data-ua="Дитячий майстер-клас зі свічок"
+          >
+            Candle Workshop for Kids
+          </h3>
+          <p
+            data-en="A safe and fun candle-making workshop for children. Bright colors, creativity, and joyful moments in a friendly atmosphere."
+            data-ua="Безпечний і веселий майстер-клас для дітей. Яскраві кольори, творчість та радісні емоції у дружній атмосфері."
+          >
+            A safe and fun candle-making workshop for children. Bright colors,
+            creativity, and joyful moments in a friendly atmosphere.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <h2 data-en="Contact Us" data-ua="Зв'язатись">Contact Us</h2>
+      <p
+        data-en="Write to us for orders, questions, or collaborations."
+        data-ua="Напишіть нам для замовлень, питань або співпраці."
+      >
+        Write to us for orders, questions, or collaborations.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div class="socials">
+        <a
+          href="https://www.instagram.com/wax_a_n_d_whisper"
+          target="_blank"
+          class="social-link"
+          aria-label="Instagram"
+        >
+          <svg class="icon"><use href="#icon-instagram"></use></svg>
+        </a>
+
+        <a
+          href="https://www.facebook.com/share/1AcKUUuedr/?mibextid=wwXIfr"
+          target="_blank"
+          class="social-link"
+          aria-label="Facebook"
+        >
+          <svg class="icon"><use href="#icon-facebook"></use></svg>
+        </a>
+
+        <a
+          href="http://t.me/OlhaZhemerdei"
+          target="_blank"
+          class="social-link"
+          aria-label="Telegram"
+        >
+          <svg class="icon"><use href="#icon-telegram"></use></svg>
+        </a>
+      </div>
+
+      <p
+        data-en="© 2025 Wax & Whisper · Handmade with love 🕯️"
+        data-ua="© 2025 Wax & Whisper · Ручна робота з любов’ю 🕯️"
+      >
+        © 2025 Wax & Whisper · Handmade with love 🕯️
+      </p>
+    </footer>
+
+    <script src="/src/main.js"></script>
+  </body>
+</html>
