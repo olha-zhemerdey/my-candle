@@ -110,7 +110,7 @@ body {
   position: relative;
   padding: 140px 20px 120px;
   text-align: center;
-  background: url("./image/wax-and-wisper.png") center/cover no-repeat;
+  background: url("../image/wax-and-wisper.png") center/cover no-repeat;
 }
 
 .section-one::before {
