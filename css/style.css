@@ -32,6 +32,12 @@ body {
   background: var(--bg-main);
   color: var(--text-main);
   line-height: 1.6;
+  padding-top: 72px; /* висота хедера на десктопі */
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 /* Header */
@@ -48,10 +54,14 @@ body {
 .top-header-content {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.top-header-content > * {
+  min-width: 0; /* ВАЖЛИВО */
 }
 
 .top-logo {
@@ -79,12 +89,14 @@ body {
   font-size: 22px;
   color: var(--accent-light);
   text-decoration: none;
+  flex: 1 1 auto; /* дозволяє стискатись */
 }
 
 /* Socials */
 .socials {
   display: flex;
   gap: 16px;
+  flex: 0 0 auto;
 }
 
 .social-link {
@@ -105,6 +117,115 @@ body {
   transform: scale(1.1);
 }
 
+/* Language */
+.lang-switcher {
+  display: flex;
+  gap: 8px;
+  flex: 0 0 auto;
+  margin-right: 14px;
+}
+
+.lang-btn {
+  border: 1px solid var(--accent-light);
+  background: transparent;
+  color: var(--accent-light);
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+  background: var(--accent-light);
+  color: #2a2438;
+}
+
+.top-header .logo {
+  justify-self: start;
+  text-align: left;
+}
+
+.top-header .lang-switcher {
+  justify-self: center;
+}
+
+.top-header .socials {
+  justify-self: end;
+}
+
+/* =====================
+   HEADER – TABLET
+===================== */
+@media (max-width: 1024px) {
+  body {
+    padding-top: 64px;
+  }
+
+  .top-header {
+    padding: 10px 16px;
+  }
+
+  .top-header-content {
+    gap: 14px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .socials {
+    gap: 12px;
+  }
+}
+
+/* =====================
+   HEADER – MOBILE
+===================== */
+@media (max-width: 768px) {
+  body {
+    padding-top: 72px;
+  }
+
+  .top-header {
+    padding: 6px 8px;
+  }
+
+  .top-header-content {
+    grid-template-columns: 1fr auto 1fr;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .socials {
+    gap: 2px;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .lang-btn {
+    font-size: 8px;
+  }
+
+  .lang-switcher {
+    gap: 4px;
+  }
+
+  .lang-btn {
+    padding: 4px 6px;
+  }
+}
+
 /* Hero Section */
 .section-one {
   position: relative;
@@ -117,7 +238,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(42, 36, 56, 0.9);
+  background: rgba(14, 12, 19, 0.9);
   z-index: 1;
 }
 
@@ -250,64 +371,9 @@ body {
   font-size: 14px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .top-logo {
-    font-size: 24px;
-  }
-
-  .subtitle {
-    font-size: 18px;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .top-header-content {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
-.lang-switcher {
-  display: flex;
-  gap: 8px;
-}
-
-.lang-btn {
-  border: 1px solid var(--accent-light);
-  background: transparent;
-  color: var(--accent-light);
-  padding: 6px 10px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.lang-btn.active {
-  background: var(--accent-light);
-  color: #2a2438;
-}
-
-.footer {
-  padding: 32px 20px;
-  text-align: center;
-  background-color: var(--bg-footer);
-  color: var(--text-secondary);
-  font-size: 14px;
-}
-
 .footer .socials {
   display: flex;
-  justify-content: center; /* ЦЕНТР */
+  justify-content: center;
   align-items: center;
   gap: 24px;
   margin-bottom: 16px;
@@ -324,7 +390,8 @@ body {
   opacity: 1;
   transform: scale(1.1);
 }
-/* Візуальний оверлей на картках (як у інших секцій, але з hover) */
+
+/* Hover cards */
 .card-hover {
   position: relative;
   overflow: hidden;
@@ -344,11 +411,10 @@ body {
   border-radius: 12px;
 }
 
-/* overlay */
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(216, 207, 238, 0.55); /* лавандовий */
+  background: rgba(216, 207, 238, 0.55);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -376,7 +442,7 @@ body {
   max-width: 260px;
 }
 
-/* OUR CANDLES CAROUSEL */
+/* Carousel */
 .carousel {
   display: flex;
   align-items: center;
@@ -440,39 +506,20 @@ body {
   opacity: 0.85;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .carousel-btn {
-    display: none;
-  }
-}
-
+/* Responsive */
 @media (max-width: 768px) {
   /* Header */
-  .top-header {
-    padding: 10px 12px;
+  .top-logo {
+    font-size: 32px;
   }
 
   .top-header-content {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .logo {
-    font-size: 20px;
-  }
-
-  .lang-switcher {
-    order: 3;
+    gap: 8px;
   }
 
   /* Hero */
   .section-one {
     padding: 120px 16px 90px;
-  }
-
-  .top-logo {
-    font-size: 32px;
   }
 
   .subtitle {
