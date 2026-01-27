@@ -110,7 +110,7 @@ body {
   position: relative;
   padding: 140px 20px 120px;
   text-align: center;
-  background: url("../image/wax-and-wisper.png") center/cover no-repeat;
+  background: url("../image/dresses.png") center/cover no-repeat;
 }
 
 .section-one::before {
@@ -444,5 +444,137 @@ body {
 @media (max-width: 768px) {
   .carousel-btn {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header */
+  .top-header {
+    padding: 10px 12px;
+  }
+
+  .top-header-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .lang-switcher {
+    order: 3;
+  }
+
+  /* Hero */
+  .section-one {
+    padding: 120px 16px 90px;
+  }
+
+  .top-logo {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 260px;
+    padding: 14px 28px;
+  }
+
+  /* Sections */
+  .about,
+  .products,
+  .contact {
+    padding: 60px 16px;
+  }
+
+  .about h2,
+  .products h2,
+  .contact h2 {
+    font-size: 26px;
+  }
+
+  .about p,
+  .products p,
+  .contact p {
+    font-size: 16px;
+  }
+
+  /* Cards */
+  .cards {
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+    padding: 24px 18px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+
+  /* WHY US hover cards */
+  .card-hover img {
+    height: 220px;
+  }
+
+  .card-overlay h3 {
+    font-size: 20px;
+  }
+
+  .card-overlay p {
+    font-size: 14px;
+  }
+
+  /* Carousel */
+  .carousel {
+    gap: 0;
+  }
+
+  .carousel-track {
+    gap: 16px;
+    padding-bottom: 6px;
+  }
+
+  .candle-card {
+    min-width: 240px;
+    padding: 14px;
+  }
+
+  .candle-card h3 {
+    font-size: 16px;
+  }
+
+  .candle-desc {
+    font-size: 14px;
+  }
+
+  .carousel-btn {
+    display: none;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 24px 16px;
+  }
+
+  .footer p {
+    font-size: 12px;
+  }
+
+  .footer .socials {
+    gap: 20px;
   }
 }
