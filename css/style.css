@@ -132,7 +132,7 @@ img {
   padding: 6px 10px;
   border-radius: 999px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   transition: all 0.3s ease;
 }
@@ -198,7 +198,7 @@ img {
   }
 
   .logo {
-    font-size: 10px;
+    font-size: 14px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -257,13 +257,20 @@ img {
 }
 
 .hero-buttons {
-  min-width: 210px;
+  min-width: 148px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }
-
+/* Hero image */
+.hero-img {
+  max-width: 140px;
+  display: block;
+  margin: 20px auto 0;
+  border-radius: 12px;
+}
 /* Buttons */
 .button {
   background: linear-gradient(135deg, var(--accent-soft), var(--accent-warm));
@@ -322,14 +329,6 @@ img {
   font-size: 18px;
   color: var(--text-secondary);
   margin-bottom: 16px;
-}
-
-/* Hero image */
-.hero-img {
-  max-width: 140px;
-  display: block;
-  margin: 20px auto 0;
-  border-radius: 12px;
 }
 
 /* Cards */
@@ -391,12 +390,16 @@ img {
   transform: scale(1.1);
 }
 
-/* Hover cards */
+/* =====================
+   WHY US – CARDS (DESKTOP + MOBILE)
+===================== */
+
 .card-hover {
   position: relative;
   overflow: hidden;
 }
 
+/* IMAGE */
 .card-hover img {
   width: 100%;
   height: 100%;
@@ -406,11 +409,12 @@ img {
   transition: transform 0.4s ease;
 }
 
+/* DESKTOP hover zoom */
 .card-hover:hover img {
   transform: scale(1.05);
-  border-radius: 12px;
 }
 
+/* OVERLAY – BASE */
 .card-overlay {
   position: absolute;
   inset: 0;
@@ -426,10 +430,12 @@ img {
   transition: opacity 0.35s ease;
 }
 
+/* DESKTOP hover overlay */
 .card-hover:hover .card-overlay {
   opacity: 1;
 }
 
+/* TEXT */
 .card-overlay h3 {
   color: #231d31;
   font-size: 26px;
@@ -440,6 +446,79 @@ img {
   color: #2f2742;
   font-size: 16px;
   max-width: 260px;
+}
+
+/* =====================
+   MOBILE LAYOUT + ANIMATION
+===================== */
+@media (max-width: 768px) {
+  /* overlay стає звичайним контентом */
+  .card-overlay {
+    position: static;
+    background: transparent;
+    padding: 12px 8px;
+
+    opacity: 0; /* старт для анімації */
+  }
+
+  .card-hover {
+    overflow: visible;
+  }
+
+  /* прибираємо hover-зум */
+  .card-hover img {
+    transform: none !important;
+  }
+
+  /* кольори тексту під темний фон */
+  .card-overlay h3 {
+    color: var(--accent-light);
+    font-size: 20px;
+  }
+
+  .card-overlay p {
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+
+  /* hover більше не впливає */
+  .card-hover:hover .card-overlay {
+    opacity: 1;
+  }
+
+  /* АНІМАЦІЇ */
+  .animate-left .card-overlay {
+    animation: slideLeft 1s ease forwards;
+  }
+
+  .animate-right .card-overlay {
+    animation: slideRight 1s ease forwards;
+  }
+}
+
+/* =====================
+   KEYFRAMES
+===================== */
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Carousel */
@@ -491,6 +570,9 @@ img {
 
 /* Buttons */
 .carousel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--accent-soft);
   border: none;
   padding: 10px 14px;
@@ -499,6 +581,24 @@ img {
   cursor: pointer;
   color: var(--bg-main);
   transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+  .carousel-btn {
+    display: flex;
+    font-size: 22px;
+    padding: 8px 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .carousel-btn {
+    display: flex;
+    font-size: 20px;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
 }
 
 .carousel-btn:hover {
@@ -533,7 +633,6 @@ img {
   }
 
   .button {
-    width: 100%;
     max-width: 260px;
     padding: 14px 28px;
   }
@@ -606,10 +705,6 @@ img {
 
   .candle-desc {
     font-size: 14px;
-  }
-
-  .carousel-btn {
-    display: none;
   }
 
   /* Footer */
