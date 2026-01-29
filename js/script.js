@@ -64,3 +64,22 @@ document.addEventListener("DOMContentLoaded", () => {
     track.scrollBy({ left: -cardWidth, behavior: "smooth" });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".card-hover");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const overlay = entry.target.querySelector(".card-overlay");
+          overlay.classList.add("animate-visible"); // додаємо клас для анімації
+          observer.unobserve(entry.target); // один раз
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  cards.forEach((card) => observer.observe(card));
+});

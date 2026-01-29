@@ -1,19 +1,18 @@
 :root {
   /* Backgrounds */
-  --bg-main: #2a2438;
-  --bg-card: #221d2f;
-  --bg-footer: #1f1a2b;
+  --bg-main: #f4efe9; /* теплий кремово-бежевий */
+  --bg-card: #eee7df; /* світлий беж для карток */
+  --bg-footer: #e9e1d8; /* секції / блоки */
 
   /* Text */
-  --text-main: #f7f2ea;
-  --text-secondary: #d9d1c6;
+  --text-main: #2f2a36; /* глибокий темний (не чорний) */
+  --text-secondary: #6b647a; /* пилово-лавандовий */
 
   /* Accents (lavender) */
-  --accent-light: #d8cfee;
-  --accent-warm: #b9a8d9;
-  --accent-soft: #ede7fa;
+  --accent-light: #b9aacd; /* ніжна лаванда */
+  --accent-warm: #a08fc1; /* трохи глибша */
+  --accent-soft: #d8cfe6; /* дуже м’яка */
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -45,7 +44,7 @@ img {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(42, 36, 56, 0.85);
+  background: rgba(244, 239, 233, 0.95);
   backdrop-filter: blur(8px);
   z-index: 1000;
   padding: 12px 20px;
@@ -67,7 +66,7 @@ img {
 .top-logo {
   font-family: "Pacifico", cursive;
   font-size: 46px;
-  color: var(--accent-light);
+  color: var(--accent-warm);
   text-decoration: none;
   animation: glow 4s infinite ease-in-out;
 }
@@ -87,7 +86,7 @@ img {
 .logo {
   font-family: "Pacifico", cursive;
   font-size: 22px;
-  color: var(--accent-light);
+  color: var(--accent-warm);
   text-decoration: none;
   flex: 1 1 auto; /* дозволяє стискатись */
 }
@@ -108,7 +107,7 @@ img {
 .icon {
   width: 22px;
   height: 22px;
-  fill: var(--accent-light);
+  fill: var(--accent-warm);
   transition: all 0.3s ease;
 }
 
@@ -126,9 +125,9 @@ img {
 }
 
 .lang-btn {
-  border: 1px solid var(--accent-light);
+  border: 1px solid var(--accent-warm);
   background: transparent;
-  color: var(--accent-light);
+  color: var(--accent-warm);
   padding: 6px 10px;
   border-radius: 999px;
   cursor: pointer;
@@ -238,7 +237,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(14, 12, 19, 0.9);
+  background: rgba(227, 222, 238, 0.2);
   z-index: 1;
 }
 
@@ -251,7 +250,7 @@ img {
 
 .subtitle {
   font-family: "Dancing Script", cursive;
-  font-size: 28px;
+  font-size: 26px;
   color: var(--text-secondary);
   margin-bottom: 40px;
 }
@@ -274,7 +273,7 @@ img {
 /* Buttons */
 .button {
   background: linear-gradient(135deg, var(--accent-soft), var(--accent-warm));
-  color: #2a2438;
+  color: rgb(42, 36, 56);
   padding: 16px 36px;
   border-radius: 999px;
   border: none;
@@ -319,7 +318,7 @@ img {
 .contact h2 {
   font-size: 36px;
   margin-bottom: 24px;
-  color: var(--accent-soft);
+  color: var(--accent-light);
 }
 
 .about p,
@@ -342,7 +341,7 @@ img {
 
 .card {
   position: relative;
-  background: linear-gradient(180deg, #3a3250, #2a2438);
+  background: linear-gradient(180deg, var(--bg-card), var(--bg-main));
   padding: 32px 24px;
   border-radius: 18px;
   width: 280px;
@@ -418,7 +417,7 @@ img {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(216, 207, 238, 0.55);
+  background: rgba(216, 207, 230, 0.55);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -437,13 +436,13 @@ img {
 
 /* TEXT */
 .card-overlay h3 {
-  color: #231d31;
+  color: #2f2a36;
   font-size: 26px;
   margin-bottom: 10px;
 }
 
 .card-overlay p {
-  color: #2f2742;
+  color: #3e3356;
   font-size: 16px;
   max-width: 260px;
 }
@@ -457,8 +456,9 @@ img {
     position: static;
     background: transparent;
     padding: 12px 8px;
-
-    opacity: 0; /* старт для анімації */
+    opacity: 0;
+    transform: translateX(40px); /* або -40px для лівих */
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
   .card-hover {
@@ -479,6 +479,10 @@ img {
   .card-overlay p {
     color: var(--text-secondary);
     font-size: 14px;
+  }
+  .card-overlay.animate-visible {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   /* hover більше не впливає */
@@ -565,7 +569,7 @@ img {
 
 .candle-card h3 {
   font-size: 1.1rem;
-  color: var(--text-main);
+  color: var(--accent-warm);
 }
 
 /* Buttons */
@@ -610,7 +614,7 @@ img {
 @media (max-width: 768px) {
   /* Header */
   .top-logo {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .top-header-content {
