@@ -11,6 +11,18 @@ document.querySelectorAll(".scroll-btn").forEach((btn) => {
 });
 
 // ======================
+// Smooth scroll for buttons
+// ======================
+document.querySelectorAll(".scroll-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = document.querySelector(btn.dataset.target);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+// ======================
 // Language switcher
 // ======================
 const langBtns = document.querySelectorAll(".lang-btn");
@@ -28,14 +40,17 @@ const setLanguage = (lang) => {
   localStorage.setItem("lang", lang);
 };
 
-// Set saved language
+// Set language on page load
 const savedLang = localStorage.getItem("lang");
+
+// Якщо мови в localStorage немає, за замовчуванням – українська
 if (savedLang === "en") {
   setLanguage("en");
 } else {
   setLanguage("ua");
 }
 
+// Buttons
 langBtns.forEach((btn) => {
   btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
 });
