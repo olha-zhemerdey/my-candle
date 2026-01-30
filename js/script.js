@@ -1,12 +1,18 @@
-// Smooth scroll
+// ======================
+// Smooth scroll for buttons
+// ======================
 document.querySelectorAll(".scroll-btn").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
+  btn.addEventListener("click", () => {
     const target = document.querySelector(btn.dataset.target);
     if (target) {
-      window.scrollTo({ top: target.offsetTop - 80, behavior: "smooth" });
+      target.scrollIntoView({ behavior: "smooth" });
     }
   });
 });
+
+// ======================
+// Language switcher
+// ======================
 const langBtns = document.querySelectorAll(".lang-btn");
 const allText = document.querySelectorAll("[data-en][data-ua]");
 
@@ -22,35 +28,21 @@ const setLanguage = (lang) => {
   localStorage.setItem("lang", lang);
 };
 
-// Встановити мову при завантаженні
+// Set saved language
 const savedLang = localStorage.getItem("lang") || "ua";
 setLanguage(savedLang);
 
-// Кнопки переключення
 langBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    setLanguage(btn.dataset.lang);
-  });
+  btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
 });
 
-// Scroll buttons (як у тебе було)
-const scrollBtns = document.querySelectorAll(".scroll-btn");
-
-scrollBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const target = document.querySelector(btn.dataset.target);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});
-
-// Scroll buttons (карусель)
+// ======================
+// Carousel scroll
+// ======================
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".carousel-track");
   const prev = document.querySelector(".carousel-btn.prev");
   const next = document.querySelector(".carousel-btn.next");
-
   if (!track || !prev || !next) return;
 
   const cardWidth =
@@ -64,39 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
     track.scrollBy({ left: -cardWidth, behavior: "smooth" });
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".card-hover");
 
-  let observerStarted = false;
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (observerStarted) return;
-      observerStarted = true;
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const overlay = entry.target.querySelector(".card-overlay");
-              overlay.classList.add("animate-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.4,
-        }
-      );
-
-      cards.forEach((card) => observer.observe(card));
-    },
-    { once: true }
-  );
-});
-const cards = document.querySelectorAll(".candle-card");
-const scentCards = document.querySelectorAll(".scents .candle-card");
+// ======================
+// Fade in cards on scroll
+// ======================
+const cards = document.querySelectorAll(".card-hover, .candle-card");
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -106,27 +70,29 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.2 }
+  { threshold: 0.2 },
 );
 
-scentCards.forEach((card) => observer.observe(card));
+cards.forEach((card) => observer.observe(card));
 
-// 3D рух при наведенні тільки на десктопі
+// ======================
+// Workshops 3D hover (desktop only, no flip)
+// ======================
+const workshopCards = document.querySelectorAll("#workshops .candle-card");
+
 if (window.innerWidth > 768) {
-  scentCards.forEach((card) => {
+  workshopCards.forEach((card) => {
     card.addEventListener("mousemove", (e) => {
       const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left; // координата миші всередині картки
+      const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      // градуси обертання
-      const rotateX = ((y - centerY) / centerY) * 10; // вперед-назад
-      const rotateY = ((x - centerX) / centerX) * 10; // вліво-вправо
+      const rotateX = ((y - centerY) / centerY) * 10;
+      const rotateY = ((x - centerX) / centerX) * 10;
 
-      // трохи переміщуємо картку по осі для ефекту “живої рухомості”
       const translateX = ((x - centerX) / centerX) * 15;
       const translateY = ((y - centerY) / centerY) * 15;
 
@@ -139,3 +105,13 @@ if (window.innerWidth > 768) {
     });
   });
 }
+
+// ======================
+// Mobile: tap to show description (no flip)
+// ======================
+workshopCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    const overlay = card.querySelector(".card-overlay");
+    if (overlay) overlay.classList.toggle("animate-visible");
+  });
+});

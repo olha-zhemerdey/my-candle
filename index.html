@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
@@ -109,16 +109,19 @@
     <!-- About Section -->
     <section class="about" id="about">
       <h2 data-en="About" data-ua="Про нас">About</h2>
-      <p
-        data-en="Wax & Whisper was born from a love for quiet evenings, soft light, and handmade rituals.
+      <p class="about-text">
+        <span class="brand-accent">Wax &amp; Whisper</span>
+        <span
+          data-en=" was born from a love for quiet evenings, soft light, and handmade rituals.
 Each candle is poured slowly, with attention to detail, scent, and mood — to bring warmth, calm, and a gentle pause into everyday life."
-        data-ua="Wax & Whisper народився з любові до тихих вечорів, м’якого світла та ручних ритуалів.
+          data-ua=" народився з любові до тихих вечорів, м’якого світла та ручних ритуалів.
 Кожна свічка створюється повільно — з увагою до деталей, аромату й настрою, щоб дарувати тепло, спокій і момент паузи в повсякденності."
-      >
-        Wax & Whisper was born from a love for quiet evenings, soft light, and
-        handmade rituals. Each candle is poured slowly, with attention to
-        detail, scent, and mood — to bring warmth, calm, and a gentle pause into
-        everyday life.
+        >
+          was born from a love for quiet evenings, soft light, and handmade
+          rituals. Each candle is poured slowly, with attention to detail,
+          scent, and mood — to bring warmth, calm, and a gentle pause into
+          everyday life.
+        </span>
       </p>
     </section>
 
@@ -176,40 +179,83 @@ Each candle is poured slowly, with attention to detail, scent, and mood — to b
         </article>
       </div>
     </section>
-
-    <!-- SCENTS -->
-    <section class="products scents" data-section="scents">
+    <section class="scents" id="scents">
       <h2 data-en="Our Scents" data-ua="Наші аромати">Our Scents</h2>
-
       <div class="cards">
-        <article class="candle-card from-left">
-          <h3>Lavender & Vanilla</h3>
-          <p
-            data-en="Soft, calming aroma..."
-            data-ua="Ніжний заспокійливий аромат..."
-          >
-            Soft, calming aroma...
-          </p>
-        </article>
+        <!-- Lavender & Vanilla -->
+        <div class="candle-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./image/Lavender.jpg" alt="Lavender & Vanilla" />
+            </div>
+            <div class="card-back">
+              <h3
+                data-en="Lavender Driftwood"
+                data-ua="Лаванда і Морська деревина"
+              >
+                Lavender Driftwood
+              </h3>
+              <p
+                data-en="A fresh, woody fragrance with a mysterious marine accent. It offers a new take on classic lavender, blending this timeless floral note with masculine hints of cypress, cedar, and amber."
+                data-ua="свіжий, деревний аромат із загадковим морським акцентом. Він пропонує нове бачення класичної лаванди, поєднуючи цю вічну квіткову ноту з мужніми відтінками кипариса, кедра та амбри."
+              >
+                A fresh, woody fragrance with a mysterious marine accent. It
+                offers a new take on classic lavender, blending this timeless
+                floral note with masculine hints of cypress, cedar, and amber.
+              </p>
+            </div>
+          </div>
+        </div>
 
-        <article class="candle-card from-right">
-          <h3>Amber & Wood</h3>
-          <p data-en="Deep, warm scent..." data-ua="Глибокий теплий аромат...">
-            Deep, warm scent...
-          </p>
-        </article>
+        <!-- Ambered Vanille -->
+        <div class="candle-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./image/Vanilla.jpg" alt="Ambered Vanille" />
+            </div>
+            <div class="card-back">
+              <h3 data-en="Ambered Vanille" data-ua="Бурштинова ваніль">
+                Ambered Vanille
+              </h3>
+              <p
+                data-en="The fragrance opens with creamy coconut and sweet sugar. In the heart — radiant vanilla, complemented by a light floral hint of jasmine. The composition is rounded off with warm amber, aromatic patchouli, and soft musk."
+                data-ua="Аромат відкривається вершковим кокосом і солодким цукром. У серці — сяюча ваніль, доповнена легким квітковим акцентом жасмину. Завершують композицію тепла амбра, ароматний пачулі та м’який мускус."
+              >
+                The fragrance opens with creamy coconut and sweet sugar. In the
+                heart — radiant vanilla, complemented by a light floral hint of
+                jasmine. The composition is rounded off with warm amber,
+                aromatic patchouli, and soft musk.
+              </p>
+            </div>
+          </div>
+        </div>
 
-        <article class="candle-card from-top">
-          <h3>Rose & Musk</h3>
-          <p
-            data-en="Romantic and elegant..."
-            data-ua="Романтичний та елегантний аромат..."
-          >
-            Romantic and elegant...
-          </p>
-        </article>
+        <!-- Rose & Musk -->
+        <div class="candle-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./image/rose.jpg" alt="Rose & Musk" />
+            </div>
+            <div class="card-back">
+              <h3 data-en="Bohemian Rose" data-ua="Богемна троянда">
+                Rose & Musk
+              </h3>
+              <p
+                data-en="Floral fragrance that captures the essence of the entire rose — from petals to stem. Top notes of basil and grapefruit evoke fresh greenery, unfolding into a vibrant heart of rich roses and delicate magnolia blooms. Base notes of sweet and earthy patchouli complete this elegant scent."
+                data-ua="Квітковий аромат, що втілює всю троянду — від пелюсток до стебла. Верхні ноти базиліку та грейпфрута нагадують про свіжу зелень, розкриваючись у виразному серці з насичених троянд і ніжних квітів магнолії. Базові ноти солодкого та землистого пачулі завершують цей вишуканий аромат."
+              >
+                A free and refined floral fragrance that captures the essence of
+                the entire rose — from petals to stem. Top notes of basil and
+                grapefruit evoke fresh greenery, unfolding into a vibrant heart
+                of rich roses and delicate magnolia blooms. Base notes of sweet
+                and earthy patchouli complete this elegant scent.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
     <!-- OUR CANDLES -->
     <section class="products" id="candles">
       <h2 data-en="Our Candles" data-ua="Наші свічки">Наші свічки</h2>
@@ -335,8 +381,7 @@ Each candle is poured slowly, with attention to detail, scent, and mood — to b
       </p>
     </section>
 
-    <!-- WORKSHOPS -->
-    <section class="products">
+    <section class="products" id="workshops">
       <h2
         data-en="Candle Making Workshops"
         data-ua="Майстер-класи зі створення свічок"
@@ -345,39 +390,23 @@ Each candle is poured slowly, with attention to detail, scent, and mood — to b
       </h2>
 
       <div class="cards">
-        <!-- Romantic Workshop -->
-        <article class="card">
-          <h3
-            data-en="Romantic Candle Evening"
-            data-ua="Романтичний свічковий вечір"
-          >
-            Romantic Candle Evening
-          </h3>
-          <p
-            data-en="A cozy candle-making experience for couples or close friends. Soft light, warm scents, and a slow creative ritual to share together."
-            data-ua="Затишний майстер-клас для пар або близьких друзів. М’яке світло, теплі аромати та повільний творчий ритуал для спільного часу."
-          >
+        <div class="workshop-card">
+          <img src="./image/romantic.jpg" alt="Romantic Candle Evening" />
+          <h3>Romantic Candle Evening</h3>
+          <p>
             A cozy candle-making experience for couples or close friends. Soft
             light, warm scents, and a slow creative ritual to share together.
           </p>
-        </article>
+        </div>
 
-        <!-- Kids Workshop -->
-        <article class="card">
-          <h3
-            data-en="Candle Workshop for Kids"
-            data-ua="Дитячий майстер-клас зі свічок"
-          >
-            Candle Workshop for Kids
-          </h3>
-          <p
-            data-en="A safe and fun candle-making workshop for children. Bright colors, creativity, and joyful moments in a friendly atmosphere."
-            data-ua="Безпечний і веселий майстер-клас для дітей. Яскраві кольори, творчість та радісні емоції у дружній атмосфері."
-          >
+        <div class="workshop-card">
+          <img src="./image/bears.jpg" alt="Candle Workshop for Kids" />
+          <h3>Candle Workshop for Kids</h3>
+          <p>
             A safe and fun candle-making workshop for children. Bright colors,
             creativity, and joyful moments in a friendly atmosphere.
           </p>
-        </article>
+        </div>
       </div>
     </section>
 
