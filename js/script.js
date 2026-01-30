@@ -29,8 +29,12 @@ const setLanguage = (lang) => {
 };
 
 // Set saved language
-const savedLang = localStorage.getItem("lang") || "ua";
-setLanguage(savedLang);
+const savedLang = localStorage.getItem("lang");
+if (savedLang === "en") {
+  setLanguage("en");
+} else {
+  setLanguage("ua");
+}
 
 langBtns.forEach((btn) => {
   btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
