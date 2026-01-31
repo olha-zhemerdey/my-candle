@@ -320,9 +320,6 @@ img {
 .history,
 .products,
 .contact {
-  padding: 0 20px;
-  max-width: 1000px;
-  margin: 0 auto 60px auto;
   text-align: center;
 }
 
@@ -338,7 +335,7 @@ img {
   .history,
   .products,
   .contact {
-    padding: 8 16px; /* зменшений внутрішній відступ */
+    padding: 8px 16px; /* зменшений внутрішній відступ */
     margin-bottom: 50px; /* відступ між секціями на планшеті */
   }
 }
@@ -387,7 +384,6 @@ img {
   justify-content: center;
   gap: 32px;
   flex-wrap: wrap;
-  margin-top: 40px;
 }
 
 .card {
@@ -683,14 +679,6 @@ img {
     padding: 14px 28px;
   }
 
-  /* Sections */
-  .about,
-  .products,
-  .contact {
-    padding: 0 16px;
-    margin-bottom: 40px;
-  }
-
   .about {
     padding-top: 30px;
   }
@@ -773,7 +761,7 @@ img {
 }
 /* Контейнер секції */
 .scents {
-  padding: 60px 20px;
+  padding: 0 20px;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
@@ -951,4 +939,119 @@ img {
   .workshop-card p {
     font-size: 0.85rem;
   }
+}
+
+/* ======================
+   SECTION LAYOUT SYSTEM
+   ====================== */
+
+.section {
+  padding: 32px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Unified section titles */
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: var(--accent-light);
+  text-align: center;
+}
+
+/* Cards spacing only via gap */
+.cards {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ======================
+   MOBILE
+   ====================== */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 16px;
+  }
+
+  .section h2 {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .cards {
+    gap: 16px;
+  }
+}
+/* ======================
+   FAQ Accordion Styling
+====================== */
+.faq-accordion {
+  margin: 40px auto; /* зверху/знизу відступ, по центру горизонтально */
+  max-width: 700px; /* обмеження ширини для десктопу */
+  width: 90%; /* адаптивна ширина на мобільних */
+}
+.faq-item {
+  border-bottom: 1px solid var(--bg-card);
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: var(--bg-card); /* світлий фон секції */
+  border: none;
+  text-align: left;
+  padding: 18px 20px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary); /* основний текст */
+  border-radius: 10px;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.faq-question:hover {
+  background-color: var(--bg-card); /* легкий лавандовий ховер */
+}
+
+.faq-question[aria-expanded="true"] {
+  background-color: rgba(216, 207, 230, 0.55); /* акцент на відкритий елемент */
+  color: var(--text-main);
+}
+
+.arrow {
+  font-weight: bold;
+  transition: transform 0.3s;
+  color: #a494cc; /* м’який лавандовий колір стрілки */
+}
+
+.faq-question[aria-expanded="true"] .arrow {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  text-align: left;
+
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    padding 0.3s ease;
+  padding: 0 20px;
+  background-color: var(--bg-card); /* легкий фон відповіді */
+  border-radius: 0 0 10px 10px;
+}
+
+.faq-answer p {
+  margin: 12px 0;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-main);
 }
