@@ -112,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// FAQ Accordion
 document.querySelectorAll(".faq-question").forEach((btn) => {
   btn.addEventListener("click", () => {
     const expanded = btn.getAttribute("aria-expanded") === "true";
@@ -121,8 +120,12 @@ document.querySelectorAll(".faq-question").forEach((btn) => {
     const answer = btn.nextElementSibling;
     if (!expanded) {
       answer.style.maxHeight = answer.scrollHeight + "px";
+      answer.style.paddingTop = "12px";
+      answer.style.paddingBottom = "12px";
     } else {
       answer.style.maxHeight = "0";
+      answer.style.paddingTop = "0";
+      answer.style.paddingBottom = "0";
     }
   });
 });
