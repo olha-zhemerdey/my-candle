@@ -9,19 +9,6 @@ document.querySelectorAll(".scroll-btn").forEach((btn) => {
     }
   });
 });
-
-// ======================
-// Smooth scroll for buttons
-// ======================
-document.querySelectorAll(".scroll-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const target = document.querySelector(btn.dataset.target);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});
-
 // ======================
 // Language switcher
 // ======================
@@ -30,29 +17,32 @@ const allText = document.querySelectorAll("[data-en][data-ua]");
 
 const setLanguage = (lang) => {
   allText.forEach((el) => {
-    el.textContent = el.getAttribute(`data-${lang}`);
+    el.textContent = el.dataset[lang];
   });
 
   langBtns.forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.lang === lang);
   });
 
+  document.documentElement.lang = lang === "ua" ? "uk" : "en";
   localStorage.setItem("lang", lang);
 };
 
-// Set language on page load
+// ======================
+// Set language on first load
+// ======================
 const savedLang = localStorage.getItem("lang");
 
-// Якщо мови в localStorage немає, за замовчуванням – українська
-if (savedLang === "en") {
-  setLanguage("en");
-} else {
-  setLanguage("ua");
-}
+// якщо користувач ще не вибирав → українська
+setLanguage(savedLang || "ua");
 
-// Buttons
+// ======================
+// Buttons click
+// ======================
 langBtns.forEach((btn) => {
-  btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  btn.addEventListener("click", () => {
+    setLanguage(btn.dataset.lang);
+  });
 });
 
 // ======================
